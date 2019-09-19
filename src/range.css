@@ -1,0 +1,26 @@
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: pointer;
+  height: 10px;
+  transition: all .2s ease;
+  width: 100%;
+}
+
+@mixin thumb {
+  @include shadow(0, 0, #111);
+  background: #666;
+  border: 0 solid #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  margin: 12px / 2 0;
+  width: 100%;
+}
