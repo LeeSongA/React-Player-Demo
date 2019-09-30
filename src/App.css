@@ -7,15 +7,31 @@
 
 .section {
   display: inline-block;
-  max-width: 480px;
+  max-width: 640px;
+  margin: 20px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.section-left {
+  display: inline-block;
+  max-width: 640px;
+  margin: 20px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.section-right {
+  display: inline-block;
+  max-width: 320px;
   margin: 20px;
   text-align: left;
   vertical-align: top;
 }
 
 .player-wrapper {
-  width: 480px;
-  height: 270px;
+  width: 640px;
+  height: 360px;
 }
 
 .react-player {
@@ -23,10 +39,98 @@
   background: rgba(0, 0, 0, .1);
 }
 
+.progress-bar {
+  margin-top: 0px;
+}
+
+.progress-container {
+  stroke: #eee;
+}
+.progress-containerT {
+  stroke: #eee;
+  margin-top: 20px;
+}
+.progress-gap {
+  stroke: #fff;
+}
+.progress-played {
+  stroke: #3e518f;
+}
+.progress-loaded {
+  stroke: #c4d8ee;
+}
+.progress-phase1 {
+  stroke: #faed7d;
+}
+.progress-phase2 {
+  stroke: #b5b2ff;
+}
+.progress-phase3 {
+  stroke: #d182ff;
+}
+.progress-phase4 {
+  stroke: #cef279;
+}
+.progressT {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+
 .faded {
   color: rgba(0, 0, 0, .5);
 }
 
 .footer {
   margin: 20px;
+}
+
+.c-link {
+  position: relative;
+  color: #bbb;
+}
+
+.c-link::before,
+.c-link::after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -5px);
+  opacity: 0;
+  transition: .2s;
+}
+
+.c-link::before {
+  content: '';
+  bottom: calc(100% + 2px);
+  border: solid 5px transparent;
+  border-top-color: currentColor;
+}
+
+.c-link::after {
+  content: attr(aria-label);
+  bottom: calc(100% + 12px);
+  padding: .5rem .75rem;
+  color: white;
+  font-size: .875rem;
+  border-radius: 3px;
+}
+
+.c-link:hover::before,
+.c-link:hover::after {
+  opacity: 1;
+}
+
+.c-link svg {
+  fill: currentColor;
+  transition: .2s;
+  width: 24px;
+  height: 24px;
+}
+
+.c-link--github:hover { 
+  color: #25292f 
+}
+
+.c-link--github:hover::after { 
+  background: #25292f 
 }
